@@ -23,3 +23,11 @@
 /* 2021-11-17 14:32:31 [3 ms] */ INSERT INTO works_with VALUES (107, 405, 26000)
 /* 2021-11-17 14:32:32 [2 ms] */ INSERT INTO works_with VALUES (102, 406, 15000)
 /* 2021-11-17 14:32:33 [2 ms] */ INSERT INTO works_with VALUES (105, 406, 130000)
+/* 2021-11-17 14:49:06 [2 ms] */ SELECT * FROM employee
+/* 2021-11-17 14:52:52 [2 ms] */ SELECT * FROM employee ORDER BY salary
+/* 2021-11-17 14:55:22 [1 ms] */ SELECT * FROM employee ORDER BY salary DESC
+/* 2021-11-17 14:59:19 [3 ms] */ SELECT * FROM employee ORDER BY sex, first_name, last_name
+/* 2021-11-17 15:00:27 [1 ms] */ SELECT * FROM employee LIMIT 5
+/* 2021-11-17 15:02:06 [2 ms] */ SELECT first_name, last_name FROM employee
+/* 2021-11-17 15:04:23 [2 ms] */ SELECT first_name AS Forname, last_name AS Surname FROM employee
+/* 2021-11-17 15:06:34 [4 ms] */ SELECT DISTINCT sex FROM employee
