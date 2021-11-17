@@ -31,3 +31,19 @@
 /* 2021-11-17 15:02:06 [2 ms] */ SELECT first_name, last_name FROM employee
 /* 2021-11-17 15:04:23 [2 ms] */ SELECT first_name AS Forname, last_name AS Surname FROM employee
 /* 2021-11-17 15:06:34 [4 ms] */ SELECT DISTINCT sex FROM employee
+/* 2021-11-17 15:11:19 [1 ms] */ SELECT COUNT(emp_id) FROM employee
+/* 2021-11-17 15:19:18 [32 ms] */ ALTER TABLE 	employee CHANGE birth_day birth_date date
+/* 2021-11-17 15:19:49 [6 ms] */ SELECT COUNT(emp_id) FROM employee WHERE sex = 'F' AND birth_date > '1971-01-01'
+/* 2021-11-17 15:22:34 [3 ms] */ SELECT AVG(salary) FROM employee
+/* 2021-11-17 15:24:14 [1 ms] */ SELECT AVG(salary) FROM employee WHERE sex = 'M'
+/* 2021-11-17 15:26:07 [3 ms] */ SELECT SUM(salary) FROM employee
+/* 2021-11-17 15:29:09 [3 ms] */ SELECT COUNT(sex), sex FROM employee GROUP BY sex
+/* 2021-11-17 15:33:11 [3 ms] */ SELECT COUNT(total_sales) FROM works_with GROUP BY emp_id
+/* 2021-11-17 15:33:34 [1 ms] */ SELECT COUNT(total_sales), emp_id FROM works_with GROUP BY emp_id
+/* 2021-11-17 15:34:08 [2 ms] */ SELECT sum(total_sales), emp_id FROM works_with GROUP BY emp_id
+/* 2021-11-17 15:34:30 [1 ms] */ SELECT SUM(total_sales), emp_id FROM works_with GROUP BY emp_id
+/* 2021-11-17 15:36:08 [2 ms] */ SELECT SUM(total_sales), client_id FROM works_with GROUP BY client_id
+/* 2021-11-17 15:37:03 [2 ms] */ SELECT SUM(total_sales), client_id, emp_id FROM works_with GROUP BY client_id, emp_id
+/* 2021-11-17 15:38:07 [3 ms] */ SELECT SUM(total_sales), client_id AND COUNT(total_sales), client_id FROM works_with GROUP BY client_id
+/* 2021-11-17 15:38:23 [1 ms] */ SELECT SUM(total_sales), client_id AND COUNT(total_sales), client_id FROM works_with GROUP BY client_id, client_id
+/* 2021-11-17 15:39:09 [1 ms] */ SELECT SUM(total_sales), client_id FROM works_with GROUP BY client_id
